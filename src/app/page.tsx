@@ -99,7 +99,7 @@ export default function Home() {
             </SelectTrigger>
             <SelectContent>
               {estadosBrasileiros.map((estado) => (
-                <SelectItem value={estado}>{estado}</SelectItem>
+                <SelectItem key={estado} value={estado}>{estado}</SelectItem>
               ))}
             </SelectContent>
           </Select>
