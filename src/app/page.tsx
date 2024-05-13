@@ -136,31 +136,26 @@ export default function Home() {
       {sindicatos.length == 0 ? (
         <p>Não tem sindicatos</p>
       ) : (
-        sindicatos.map(
-          (sindicato) => (
-            console.log(sindicato),
-            (
-              <div className="flex  bg-slate-400 p-2 flex-col my-4">
-                <p>{sindicato.Denominação}</p>
-                <p>{sindicato.Classe}</p>
-                <p> CNPJ: {sindicato.CNPJ}</p>
-                <p>{sindicato['Código Sindical Completo']}</p>
-                <p>
-                  {sindicato.Logradouro}, {sindicato.Número} -{' '}
-                  {sindicato.Bairro} - {sindicato.Complemento} - {sindicato.CEP}
-                </p>
-                <p>
-                  {sindicato['Localidade da sede']}, {sindicato['UF da sede']}
-                </p>
-                <p></p>
-                <p>Email</p>
-                <p>{sindicato['E-mail']}</p>
-                <p>Telefone:</p>
-                <p>{sindicato['Telefone 1']}</p>
-              </div>
-            )
-          )
-        )
+        sindicatos.map((sindicato) => (
+          <div key={sindicato.CNPJ} className="flex  bg-slate-400 p-2 flex-col my-4">
+            <p>{sindicato.Denominação}</p>
+            <p>{sindicato.Classe}</p>
+            <p> CNPJ: {sindicato.CNPJ}</p>
+            <p>{sindicato['Código Sindical Completo']}</p>
+            <p>
+              {sindicato.Logradouro}, {sindicato.Número} - {sindicato.Bairro} -{' '}
+              {sindicato.Complemento} - {sindicato.CEP}
+            </p>
+            <p>
+              {sindicato['Localidade da sede']}, {sindicato['UF da sede']}
+            </p>
+            <p></p>
+            <p>Email</p>
+            <p>{sindicato['E-mail']}</p>
+            <p>Telefone:</p>
+            <p>{sindicato['Telefone 1']}</p>
+          </div>
+        ))
       )}
     </main>
   );
